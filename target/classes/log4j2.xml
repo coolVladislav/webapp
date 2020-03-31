@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%n%d%n%p\t%C.%M:%L%n%m%n"/>
+        </Console>
+        
+	    <File name="MyFile" fileName="log.txt">
+	      <PatternLayout pattern="%n%d%n%p\t%C.%M:%L%n%m%n" />
+	    </File>
+	    
+	    <Async name="Async">
+	      <AppenderRef ref="MyFile"/>
+	    </Async>
+	 </Appenders>
+	 
+    <Loggers>
+        <Logger name= "controller.DispatcherServlet" level="debug" additivity="true">
+           <AppenderRef ref="Console"/>
+           <AppenderRef ref="Async"/>
+        </Logger>
+ 
+        <!-- Root Logger -->
+        <Root level="all">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="Async"/>
+        </Root>
+    </Loggers>
+ 
+ 
+</Configuration>

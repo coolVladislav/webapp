@@ -1,6 +1,12 @@
 # Compiled class file
 *.class
 
+*.swp
+.classpath
+.project
+.settings/
+
+
 # Log file
 *.log
 
